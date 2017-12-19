@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.jaredrummler:android-animations-1.0.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-animations-1.0.0.aar/0a186981fcf842b5d35e4ca157a4dfc9/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-animations-1.0.0.aar/0a186981fcf842b5d35e4ca157a4dfc9/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jaredrummler/android-animations/1.0.0/e8dd30184522042a90016e40de9bcf782ae5df74/android-animations-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

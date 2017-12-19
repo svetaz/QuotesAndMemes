@@ -1,0 +1,1555 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutMain"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    tools:context="com.chikeandroid.tutsplus_glide.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:elevation="24dp"
+
+
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:windowActionBarOverlay="false"
+        app:elevation="24dp">
+
+        <!-- Toolbar is a standard toolbar for use within application content. -->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:background="?attr/colorPrimary"
+            android:elevation="24dp"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="@string/app_name">
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/tools"
+                    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/relativeLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/cardview_light_background"
+                    android:elevation="0dp">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      xmlns:app="http://schemas.android.com/apk/res-auto"
+                      xmlns:tools="http://schemas.android.com/tools"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:background="@color/cardview_light_background"
+                      android:gravity="center_vertical"
+                      android:orientation="vertical"
+            >
+
+
+            <com.yalantis.phoenix.PullToRefreshView
+                android:id="@+id/pull_to_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:android="http://schemas.android.com/apk/res/android">
+            <ScrollView
+                android:id="@+id/scroll"
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent"
+                android:background="@color/cardview_light_background"
+                android:scrollbars="none">
+
+
+
+                <LinearLayout
+                    android:id="@+id/ovaj"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/cardview_light_background"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="zakljucaj"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image1"
+                                android:paddingBottom="5dp"
+                                android:text="Disciplina"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title1"
+                                android:layout_toRightOf="@id/cardview_image1"
+                                android:text="Alo ja sam ti disciplinovan !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="hey"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toEndOf="@+id/cardview_image"
+                                android:layout_toRightOf="@+id/cardview_image"
+                                android:paddingBottom="5dp"
+                                android:text="Cunnilingus"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"/>
+
+                            <TextView
+                                android:id="@+id/cardview_desc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title"
+                                android:layout_toRightOf="@id/cardview_image"
+                                android:text="Zapamtićeš sinoćnu veče porijeklo ti jebem upamtićeš srbina iz republike srpske mira nije sama i repa bez korena komećeš ti pičku lizat lizat ćeš ti moj kurac !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="kapija"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image2"
+                                android:paddingBottom="5dp"
+                                android:text="Kuća"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title2"
+                                android:layout_toRightOf="@id/cardview_image2"
+                                android:text="Ovo je srpska kuća neće mi on ovde klanjati nije ovo džamija jebo majku svoju bradatu !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="sc"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image3"
+                                android:paddingBottom="5dp"
+                                android:text="Higijena"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title3"
+                                android:layout_toRightOf="@id/cardview_image3"
+                                android:text="Što ovo malo ne očistite reću ja Branku ovaj mali Takilo neće ništa da čisti ne može to tako bre u ugovoru stoji da će se higijena održavati ako neće Takilo da čisti dovešću ja ženu za 20 ojra a ako neće ni to kapija !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="jasam"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image21"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title21"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image21"
+                                android:paddingBottom="5dp"
+                                android:text="Zatvor"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc21"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title21"
+                                android:layout_toRightOf="@id/cardview_image21"
+                                android:text="Ja sam ti se zatvora naležo, pički najebo i života naživeo !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="neunosimo"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Neunosimo"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text="Neunosimo pozz?"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="disciplinovan"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Kvaliteta"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text="Ovo je njemačka kvaliteta nije to ono sranje što kinezi prave alo bre njemačka kvaliteta nikad mi se niko nije žalio na robu dvadeset godina sam u branši !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="razguli"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Bandera"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text="Visio bi ti meni na banderi !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="zatvor"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Piva"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text="Miro imal pive ?"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="zapamtices"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Kapija"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text="K a p i j a !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="alo"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Alo"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text="Alo !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="branko"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Branko I"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text="Što mi se Branko ne javlja ?"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="hrvati"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Branko II"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text="Branko mani se hrvata !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="nared"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Grok"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text=":GROK: Doćeš i ti nared !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="komsinica"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Komšinica"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text=":GROK: Moram izjebati ovu komšinicu !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="sinoc"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Odro"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text=":GROK: Joj što sam sinoć izjebo jednu uh uh kako sam je odro !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="masina"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Osam sati bez pauze"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text=":GROK: Mogu da jebem satima ko mašina osam sati bez pauze !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="muslimanke"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Muslimanke"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text=":GROK: Joj što volim da jebem muslimanke tako im se svetim !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="krmece"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Pig's eye"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text=":GROK: Ima pičku ko krmeće oko !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="imela"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Imel"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text="Mušterije mi šalju imela na kupujem prodajem !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="musterija"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Kad ode ..."
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text="Kad ode mušterija moš je jebat !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="vrat"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Ograda"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text="Ja ti tu preskočim ogradu i u letu ga zgrabim zubima za vrat !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="fruska"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Fruška Gora"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text="Stavim ga u kola odvedem ga na frušku goru vežem ga za drvo i ne puštam dok ne vrati pare !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="pastete"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Paštete"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text="Minirao sam celo dvorište paštetama svuda su nagazne mine ali nisu strašne to su one što ti samo stopalo otkinu !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:backgroundTint="@color/cardview_light_background"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+
+                            android:layout_marginTop="5dp"
+                            android:background="@color/cardview_light_background"
+                            android:elevation="4dp"
+                            android:onClick="brat"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/cardview_image211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="16dp"
+                                android:src="@mipmap/quote"/>
+
+
+                            <TextView
+                                android:id="@+id/cardview_title211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:paddingBottom="5dp"
+                                android:text="Zabrana"
+                                android:textColor="@color/PrimaryText"
+                                android:textSize="24sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/cardview_desc211"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/cardview_title211"
+                                android:layout_toRightOf="@id/cardview_image211"
+                                android:text="Ja sam bre rođenom bratu uveo zabranu 10 godina ne sme ovde dolaziti !"
+                                android:textColor="@color/SecondaryText"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            </com.yalantis.phoenix.PullToRefreshView>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>
+

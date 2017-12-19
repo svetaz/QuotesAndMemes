@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.github.javiersantos:MaterialStyledDialogs-2.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/MaterialStyledDialogs-2.1.aar/1cf3ed32bbb14fd3f8c400efcfd888ba/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/MaterialStyledDialogs-2.1.aar/1cf3ed32bbb14fd3f8c400efcfd888ba/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

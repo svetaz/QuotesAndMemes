@@ -1,0 +1,92 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
+         dismiss it. -->
+    <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
+
+
+
+    <PreferenceCategory
+        android:title="Obaveštenja (dnevna doza Savić Tomislava)"
+
+
+
+
+        android:key="sync_settings">
+
+        <EditTextPreference
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:enabled="false"
+
+            android:summary="Ako želite da vam stižu obaveštenja, telefon ne sme biti podešen da automatski zatvara aplikaciju.Molimo vas da proverite podešavanja na vašem telefonu."
+            />
+
+
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="notif_morning"
+            android:icon="@drawable/jutro"
+            android:summaryOn="biće Vam data doza Savića da lakše započnete dan"
+            android:summaryOff="neće biti data doza Savića u ovo vreme"
+            android:title="Jutarnja doza (10:00h)" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="notif_day"
+            android:icon="@drawable/dan"
+
+            android:summaryOn="biće Vam data doza Savića da uživate u popodnevu"
+            android:summaryOff="neće biti data doza Savića u ovo vreme"
+            android:title="Dnevna doza (16:00h)" />
+
+        <SwitchPreference
+
+            android:defaultValue="true"
+            android:key="notif_evening"
+            android:icon="@drawable/noc"
+            android:summaryOn="biće Vam data doza Savića da lepše spavate"
+            android:summaryOff="neće biti data doza Savića u ovo vreme"
+            android:title="Večernja doza (22:00h)" />
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+    android:title="Tonovi">
+
+    <ListPreference
+        android:key="PREF_LIST_SOUNDS"
+        android:title="Ton obaveštenja"
+        android:icon="@drawable/music"
+        android:summary="odaberite ton za dnevnu dozu Savića"
+
+        android:entries="@array/listentriessounds"
+        android:entryValues="@array/listvaluessounds"
+        android:defaultValue="1"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Ostalo">
+
+        <SwitchPreference
+
+            android:defaultValue="true"
+            android:key="notif_help"
+            android:icon="@drawable/pomoc"
+            android:summaryOn="uključeno"
+            android:summaryOff="isključeno"
+            android:title="Help poruke u dnu ekrana" />
+
+
+</PreferenceCategory>
+
+
+
+
+
+
+
+</PreferenceScreen>

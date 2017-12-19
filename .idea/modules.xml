@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/QuotesAndMemes-master.iml" filepath="$PROJECT_DIR$/QuotesAndMemes-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Filip 3\Desktop\QuotesAndMemes-master\QuotesAndMemes-master\code-an-image-gallery-with-glide-master.iml" filepath="C:\Users\Filip 3\Desktop\QuotesAndMemes-master\QuotesAndMemes-master\code-an-image-gallery-with-glide-master.iml" />
+      <module fileurl="file://C:\Users\Filip 3\Desktop\code-an-image-gallery-with-glide-master\tutsplus-glide.iml" filepath="C:\Users\Filip 3\Desktop\code-an-image-gallery-with-glide-master\tutsplus-glide.iml" />
+    </modules>
+  </component>
+</project>

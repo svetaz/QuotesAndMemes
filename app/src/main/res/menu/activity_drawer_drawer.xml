@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+
+
+        <item android:title="Glavni meni" >
+        <menu>
+
+
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/quotev"
+            android:title="Quotes"/>
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Memes"/>
+
+        </menu>
+
+        </item>
+
+
+    <item android:title="Ostalo" >
+        <menu>
+
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/settings1"
+                android:title="Podešavanja"/>
+
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/log2"
+                android:title="Changelog"/>
+
+        </menu>
+
+    </item>
+
+
+
+    <item android:title="Verzija 3.7"
+        android:enabled="false">
+
+    </item>
+
+
+
+
+
+
+
+</menu>
