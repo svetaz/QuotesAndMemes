@@ -5,14 +5,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:id="@+id/layoutMain"
     android:layout_width="match_parent"
 
     android:layout_height="match_parent"
-    android:clickable="true"
 
-    android:contextClickable="true"
-    android:elevation="0dp"
+
+
+
     tools:context="com.chikeandroid.tutsplus_glide.SpacePhotoActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -37,7 +38,18 @@
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:title="@string/app_name">
         </android.support.v7.widget.Toolbar>
+
+
     </android.support.design.widget.AppBarLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+
+        android:gravity="center_horizontal"
+        android:textAlignment="center"
+        android:id="@+id/textTitle"/>
 
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -45,11 +57,13 @@
                     android:id="@+id/relativeLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+
                     android:background="@color/colorPrimary"
         >
 
         <ScrollView
             android:layout_width="match_parent"
+
 
             android:layout_height="match_parent"
             >
@@ -58,15 +72,18 @@
                 android:id="@+id/activity_character"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:layout_gravity="center_vertical"
                 android:orientation="vertical">
+
+
 
                 <ImageView
                     android:id="@+id/image"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    android:onClick="clickOnImage"
+                    android:onClick="klik"
                     android:scaleType="fitCenter"/>
 
                 <EditText
@@ -74,7 +91,7 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="100dp"
+                    android:layout_marginTop="150dp"
                     android:background="@android:color/transparent"
 
                     android:cursorVisible="false"
@@ -100,114 +117,105 @@
 
     </RelativeLayout>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/dugme"
+
+
+
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu_green"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:fabSize="normal"
-        android:layout_marginBottom="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@color/colorAccent"
-        android:onClick="OnClickShare"
-        android:src="@drawable/send"
-        app:borderWidth="0dp"
-        app:elevation="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
 
-
-        app:layout_anchor="@+id/relativeLayout"
-        app:layout_anchorGravity="right|bottom"/>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButtonDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fabSize="mini"
-        android:layout_marginBottom="85dp"
-        android:layout_marginRight="15dp"
-        android:clickable="true"
-        android:visibility="invisible"
         app:layout_anchor="@+id/relativeLayout"
         app:layout_anchorGravity="right|bottom"
-        android:onClick="clickDelete"
-        fab:srcCompat="@drawable/delete"/>
+        fab:menu_animationDelayPerItem="0"
+        fab:menu_colorNormal="@color/colorAccent"
+        fab:menu_colorPressed="#FFCE1B57"
+        fab:menu_colorRipple="#FF9F1544"
+        fab:menu_icon="@drawable/arrow"
+        fab:menu_labels_ellipsize="end"
+        app:menu_labels_colorNormal="@color/colorProvidna"
+        fab:menu_labels_maxLines="2">
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButtonRandom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fabSize="mini"
-        android:layout_marginBottom="135dp"
-        android:layout_marginRight="15dp"
-        android:clickable="true"
-        android:visibility="invisible"
-        app:layout_anchor="@+id/relativeLayout"
-        app:layout_anchorGravity="right|bottom"
-        android:onClick="clickRandom"
-        android:src="@drawable/dice"/>
+        <com.github.clans.fab.FloatingActionButton
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButtonCrno"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fabSize="mini"
-        android:layout_marginBottom="185dp"
-        android:layout_marginRight="15dp"
-        android:clickable="true"
-        app:backgroundTint="@android:color/black"
-        android:visibility="invisible"
-        app:layout_anchor="@+id/relativeLayout"
-        app:layout_anchorGravity="right|bottom"
-        android:onClick="clickCrno"
-        android:src="@drawable/boja2"/>
+            style="@style/MenuButtonsSmall.Green"
+            android:layout_width="wrap_content"
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButtonBelo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fabSize="mini"
-        android:layout_marginBottom="185dp"
-        android:layout_marginRight="15dp"
-        android:clickable="true"
-        app:backgroundTint="@android:color/white"
-        android:tint="@android:color/black"
-        android:visibility="invisible"
-        app:layout_anchor="@+id/relativeLayout"
-        app:layout_anchorGravity="right|bottom"
-        android:onClick="clickBelo"
-        android:src="@drawable/boja2"/>
+            android:layout_height="wrap_content"
+            android:src="@drawable/delete"
+            android:onClick="obrisiTekst"
+            fab:fab_label="Obriši tekst"/>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButtonPlavo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fabSize="mini"
-        android:layout_marginBottom="185dp"
-        android:layout_marginRight="15dp"
-        android:clickable="true"
-        app:backgroundTint="@color/Green"
-        android:tint="@android:color/black"
-        android:visibility="invisible"
-        app:layout_anchor="@+id/relativeLayout"
-        app:layout_anchorGravity="right|bottom"
-        android:onClick="clickPlavo"
-        android:src="@drawable/boja2"/>
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/bojaZelena"
+            style="@style/MenuButtonsSmall.Green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/boja"
+            android:visibility="gone"
+            android:onClick="zelena"
+            fab:fab_label="Boja teksta: zelena"/>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButtonDefault"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fabSize="mini"
-        android:layout_marginBottom="185dp"
-        android:layout_marginRight="15dp"
-        android:clickable="true"
-        app:backgroundTint="@color/colorAccent"
 
-        android:visibility="invisible"
-        app:layout_anchor="@+id/relativeLayout"
-        app:layout_anchorGravity="right|bottom"
-        android:onClick="clickDefault"
-        android:src="@drawable/boja2"/>
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/bojaBela"
+            style="@style/MenuButtonsSmall.Green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/boja"
+            android:visibility="gone"
+            android:onClick="bela"
+            fab:fab_label="Boja teksta: bela"/>
 
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/bojaCrna"
+            style="@style/MenuButtonsSmall.Green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/boja"
+            android:visibility="gone"
+            android:onClick="crna"
+            fab:fab_label="Boja teksta: crna"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/bojaRoze"
+            style="@style/MenuButtonsSmall.Green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/boja"
+            android:onClick="roze"
+            fab:fab_label="Boja teksta: roze"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            style="@style/MenuButtonsSmall.Green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dice"
+            android:onClick="random"
+            fab:fab_label="Random tekst"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            style="@style/MenuButtonsSmall.Green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tt"
+            android:onClick="dodajTekst"
+            fab:fab_label="Dodaj tekst"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            style="@style/MenuButtonsSmall.Green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="podeliSliku"
+            android:src="@drawable/share"
+            fab:fab_label="Podeli"/>
+
+    </com.github.clans.fab.FloatingActionMenu>
 
 
 </android.support.design.widget.CoordinatorLayout>

@@ -74,7 +74,7 @@ public class Notification_reciever extends BroadcastReceiver{
                     .setContentTitle("DNEVNA DOZA SAVIĆA:")
                     .setWhen(System.currentTimeMillis())
                     .setContentText(r1[randomMsgIndex])
-                    .setDefaults(Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE | Notification.DEFAULT_LIGHTS)
+                    .setDefaults(Notification.DEFAULT_SOUND | Notification.DEFAULT_LIGHTS)
                     .setAutoCancel(true);
 
 
@@ -93,6 +93,24 @@ public class Notification_reciever extends BroadcastReceiver{
                     .setWhen(System.currentTimeMillis())
                     .setContentText(r1[randomMsgIndex])
                     .setDefaults(Notification.DEFAULT_LIGHTS)
+                    .setAutoCancel(true);
+
+
+
+            notificationManager.notify(100, builder.build());
+
+        }
+
+        if (END_POINT.matches("4")) {
+
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
+
+                    .setSmallIcon(R.drawable.quotezz).setContentIntent(pendingIntent)
+                    .setPriority(Notification.PRIORITY_MAX)
+                    .setContentTitle("DNEVNA DOZA SAVIĆA:")
+                    .setWhen(System.currentTimeMillis())
+                    .setContentText(r1[randomMsgIndex])
+                    .setDefaults(Notification.DEFAULT_LIGHTS|Notification.DEFAULT_VIBRATE)
                     .setAutoCancel(true);
 
 

@@ -2,6 +2,7 @@ package com.chikeandroid.tutsplus_glide;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -242,6 +243,14 @@ public class SpaceGalleryActivity extends AppCompatActivity implements Navigatio
             Intent intent1 = new Intent(SpaceGalleryActivity.this, About.class);
             startActivity(intent1);
 
+        }
+
+        else if (id==R.id.nav_feedback2){
+
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("mailto:" + "rollbarbullbar@gmail.com"));
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback");
+            startActivity(Intent.createChooser(intent, "Send email"));
         }
 
 

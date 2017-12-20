@@ -32,6 +32,12 @@
                 android:title="Podešavanja"/>
 
             <item
+                android:id="@+id/nav_feedback"
+                android:icon="@drawable/feed"
+                android:title="Feedback"/>
+
+
+            <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/log2"
                 android:title="Changelog"/>
@@ -42,7 +48,7 @@
 
 
 
-    <item android:title="Verzija 3.7"
+    <item android:title="Verzija 3.8"
         android:enabled="false">
 
     </item>

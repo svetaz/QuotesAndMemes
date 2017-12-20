@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static String NOTIF_DAY = "notif_day";
     public static String NOTIF_EVENING = "notif_evening";
     public static String NOTIF_HELP = "notif_help";
+    public static String NOTIF_OBAVESTENJA = "notif_obavestenja";
 
     private SharedPreferences prefs;
 
@@ -92,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         boolean day = prefs.getBoolean(NOTIF_DAY, true);
         boolean evening = prefs.getBoolean(NOTIF_EVENING, true);
         boolean help = prefs.getBoolean(NOTIF_HELP, true);
+        boolean obavestenja = prefs.getBoolean(NOTIF_OBAVESTENJA, true);
 
 
         Calendar cal1 = Calendar.getInstance();
@@ -108,6 +110,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         cal3.set(Calendar.HOUR_OF_DAY, 22);
         cal3.set(Calendar.MINUTE, 00);
         cal3.set(Calendar.SECOND, 00);
+
+
 
         if (morning){
             //code goes here
@@ -199,14 +203,42 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             alarmManager.cancel(sender4);
         }
 
+        if (obavestenja==false){
+
+            Intent intent = new Intent(getApplicationContext(), Notification_reciever.class);
+            PendingIntent sender2 = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
+            AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+            alarmManager.cancel(sender2);
+
+            Intent intent2 = new Intent(getApplicationContext(), Notification_reciever.class);
+            PendingIntent sender3 = PendingIntent.getBroadcast(getApplicationContext(), 1, intent2, 0);
+            AlarmManager alarmManager2 = (AlarmManager) getSystemService(ALARM_SERVICE);
+            alarmManager2.cancel(sender3);
+
+            Intent intent3 = new Intent(getApplicationContext(), Notification_reciever.class);
+            PendingIntent sender4 = PendingIntent.getBroadcast(getApplicationContext(), 3, intent3, 0);
+            AlarmManager alarmManager3 = (AlarmManager) getSystemService(ALARM_SERVICE);
+            alarmManager3.cancel(sender4);
+
+
+
+
+
+        }
+
+
         if (help) {
 
             View coordinatorLayout = (CoordinatorLayout)findViewById(R.id.layoutMain);
 
-            final Snackbar snackbar = Snackbar.make(coordinatorLayout,"Povuci ekran na dole\nza random poruku", Snackbar.LENGTH_LONG);
+            final String[] r1 = new String[] {"Povuci ekran na dole\nza random poruku","Idite u opcije da aktivirate dnevnu dozu Savića",
+            "Podelite bilo koju Savićevu nebulozu prostim klikom","Pošaljite nam feedback ako želite neku novu opciju"};
+            final int randomMsgIndex = new Random().nextInt(r1.length);
+
+            final Snackbar snackbar = Snackbar.make(coordinatorLayout,r1[randomMsgIndex], Snackbar.LENGTH_LONG);
 
             // Set an action on it, and a handler
-            snackbar.setAction("NE PRIKAZUJ VIŠE", new View.OnClickListener() {
+            snackbar.setAction("NE PRIKAZUJ", new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     startActivity(new Intent(MainActivity.this, SettingsActivity.class));
@@ -668,6 +700,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent1 = new Intent(this, About.class);
             startActivity(intent1);
 
+        }
+
+        else if (id==R.id.nav_feedback){
+
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("mailto:" + "rollbarbullbar@gmail.com"));
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback");
+            startActivity(Intent.createChooser(intent, "Send email"));
         }
 
 

@@ -27,6 +27,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+import com.github.clans.fab.FloatingActionMenu;
 import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog;
 import com.github.javiersantos.materialstyleddialogs.enums.Style;
 import com.jrummyapps.android.animations.Technique;
@@ -61,60 +62,17 @@ public class SpacePhotoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo_detail);
-       // overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-
-        /*getSupportActionBar().setDisplayShowTitleEnabled( true );
-        getSupportActionBar().setTitle("Click on an image to share it");*/
-        //getSupportActionBar()/* or getSupportActionBar() */.setTitle(Html.fromHtml("<font color=\"white\">" + getString(R.string.app_name) + "</font>"));
-        /*Toast.makeText(this, "Click on image to share it!",
-                Toast.LENGTH_SHORT).show();*/
-
-        //DIS
         activity_character=(RelativeLayout) findViewById(R.id.activity_character);
-
         mImageView = (ImageView) findViewById(R.id.image);
         EditText text = (EditText)findViewById(R.id.editTextSlika) ;
-
-
         text.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
-
         Technique.BOUNCE_IN_UP.getComposer().duration(650).delay(0).playOn(mImageView);
-
-
         SpacePhoto spacePhoto = getIntent().getParcelableExtra(EXTRA_SPACE_PHOTO);
-
-        FloatingActionButton dugme = (FloatingActionButton) findViewById(R.id.dugme);
-        Technique.BOUNCE_IN_UP.getComposer().duration(400).delay(0).playOn(dugme);
-
-        //PODESAVANJA
-
-        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        FloatingActionMenu fam = (FloatingActionMenu)findViewById(R.id.menu_green);
+        Technique.BOUNCE_IN_UP.getComposer().duration(650).delay(0).playOn(fam);
 
 
 
-
-
-        //provera podesenja
-        boolean help = prefs.getBoolean(NOTIF_HELP, true);
-
-
-        if (help) {
-
-            View coordinatorLayout = (CoordinatorLayout)findViewById(R.id.layoutMain);
-
-            final Snackbar snackbar = Snackbar.make(coordinatorLayout,"Klikni na sliku\nda bi dodao tekst", Snackbar.LENGTH_LONG);
-
-            // Set an action on it, and a handler
-            snackbar.setAction("NE PRIKAZUJ VIŠE", new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startActivity(new Intent(SpacePhotoActivity.this, SettingsActivity.class));
-                }
-            });
-
-            snackbar.show();
-
-        }
 
 
 
@@ -123,6 +81,7 @@ public class SpacePhotoActivity extends AppCompatActivity {
 
         Glide.with(this)
                 .load(spacePhoto.getUrl())
+
                 .asBitmap()
                 .error(R.mipmap.ic_cloud_off_red)
                 .listener(new RequestListener<String, Bitmap>() {
@@ -151,24 +110,10 @@ public class SpacePhotoActivity extends AppCompatActivity {
                 .diskCacheStrategy(DiskCacheStrategy.SOURCE)
                 .into(mImageView);
 
+
     }
 
-   /* private SimpleTarget target = new SimpleTarget<Bitmap>() {
 
-        @Override
-        public void onResourceReady(Bitmap bitmap, GlideAnimation glideAnimation) {
-
-           onPalette(Palette.from(bitmap).generate());
-           mImageView.setImageBitmap(bitmap);
-        }
-
-        public void onPalette(Palette palette) {
-            if (null != palette) {
-                ViewGroup parent = (ViewGroup) mImageView.getParent().getParent();
-                parent.setBackgroundColor(palette.getDarkVibrantColor(Color.GRAY));
-            }
-        }
-    };*/
 
 
 
@@ -193,25 +138,7 @@ public class SpacePhotoActivity extends AppCompatActivity {
         return returnedBitmap;
     }
 
-    public void OnClickShare(View view){
 
-        FloatingActionButton dugme = (FloatingActionButton) findViewById(R.id.dugme);
-        Technique.ROTATE.getComposer().duration(400).delay(0).playOn(dugme);
-
-
-        handler.postDelayed(new Runnable() {
-            public void run() {
-
-                podeli();
-
-            }
-        }, 500);
-
-
-
-
-
-    }
 
     @Override
     public void onBackPressed () {
@@ -254,68 +181,36 @@ super.onBackPressed();
 
     }
 
+    public void podeliSliku(View view) {
 
-
-
-    public void clickOnImage(View view) {
-
-        EditText text = (EditText)findViewById(R.id.editTextSlika) ;
-        FloatingActionButton floatingActionButtonDelete = (FloatingActionButton)findViewById(R.id.floatingActionButtonDelete);
-        FloatingActionButton floatingActionButtonRandom = (FloatingActionButton)findViewById(R.id.floatingActionButtonRandom);
-        FloatingActionButton floatingActionButtonCrno = (FloatingActionButton)findViewById(R.id.floatingActionButtonCrno);
-        FloatingActionButton floatingActionButtonBelo = (FloatingActionButton)findViewById(R.id.floatingActionButtonBelo);
-        FloatingActionButton floatingActionButtonPlavo = (FloatingActionButton)findViewById(R.id.floatingActionButtonPlavo);
-        FloatingActionButton floatingActionButtonDefault = (FloatingActionButton)findViewById(R.id.floatingActionButtonDefault);
-
-
-
-        text.setVisibility(View.VISIBLE);
-        floatingActionButtonDelete.setVisibility(View.VISIBLE);
-        floatingActionButtonRandom.setVisibility(View.VISIBLE);
-        floatingActionButtonCrno.setVisibility(View.VISIBLE);
-        Technique.ROTATE.getComposer().duration(500).delay(0).playOn(floatingActionButtonDelete);
-        Technique.ROTATE.getComposer().duration(500).delay(0).playOn(floatingActionButtonRandom);
-        Technique.ROTATE.getComposer().duration(500).delay(0).playOn(floatingActionButtonCrno);
-
-        text.requestFocus();
-        text.performClick();
-        Technique.ZOOM_IN.getComposer().duration(500).delay(0).playOn(text);
-
+        podeli();
 
 
     }
 
-
-    public void clickDelete(View view) {
+    public void dodajTekst(View view) {
 
         EditText text = (EditText)findViewById(R.id.editTextSlika) ;
-        FloatingActionButton floatingActionButtonDelete = (FloatingActionButton)findViewById(R.id.floatingActionButtonDelete);
-        FloatingActionButton floatingActionButtonRandom = (FloatingActionButton)findViewById(R.id.floatingActionButtonRandom);
+        text.setVisibility(View.VISIBLE);
+        text.requestFocus();
+        text.performClick();
+        Technique.BOUNCE.getComposer().duration(500).delay(0).playOn(text);
 
-        Technique.ROTATE.getComposer().duration(250).delay(0).playOn(floatingActionButtonDelete);
-        text.setVisibility(View.INVISIBLE);
-        text.getText().clear();
+        if (text.isShown()){
 
+            text.setText("");
+            Technique.BOUNCE.getComposer().duration(500).delay(0).playOn(text);
 
+        }
 
     }
 
-    public void clickRandom(View view) {
-
-
+    public void random(View view) {
 
         EditText text = (EditText)findViewById(R.id.editTextSlika) ;
-        FloatingActionButton floatingActionButtonDelete = (FloatingActionButton)findViewById(R.id.floatingActionButtonDelete);
-        FloatingActionButton floatingActionButtonRandom = (FloatingActionButton)findViewById(R.id.floatingActionButtonRandom);
-
-        Technique.ROTATE.getComposer().duration(250).delay(0).playOn(floatingActionButtonRandom);
-
         text.setVisibility(View.VISIBLE);
-        Technique.ZOOM_IN.getComposer().duration(500).delay(0).playOn(text);
         text.requestFocus();
         text.performClick();
-
-
 
         final String[] r1 = new String[] {"NE MOŽEŠ SA MNOM TAKO!","JA SAM TI DISCIPLINOVAN! ","BRANKO! ","ALO TI! ","SIDJI DOLE U GARAŽU!","BRANKO MANI SE HRVATA!","ALO!", "SLUŠAJ ME DOBRO!", "BRANKANE!","ALO BRE!","ALO GORON!","ALO TAKILO!","ALO SVETOMIRE!",
                 "ALO MANJAČA!","MIRO!","ALO BRADONJA!","NEMOJ DA VAS SVE IZBACIM NAPOLJE ","ALO!","MMM...SAVIĆ!","JA SAM SRBIN! ","ALO BRE OVO JE AJFON ŠEST!","KAPIJA!","JA SAM IMO FIRMU OD 20 RADNIKA U ZEN'CI!"};
@@ -342,109 +237,95 @@ super.onBackPressed();
                 "PROSTRO ONU STEKIJU TU DA SE MOLI PIČKA MU MATERINA!","U NEMAČKOJ SVI SAD SKIDAJU OVE BEHATON PLOČE!","JA SAM HTEO ĆERKI KOŽU DA ODEREM KAD SE ISTETOVIRALA!",""};
         final int randomMsgIndex5 = new Random().nextInt(r1235.length - 1);
 
-
-
-
-
-
         text.setText(r1[randomMsgIndex]+r12[randomMsgIndex2]+r123[randomMsgIndex3]+r1234[randomMsgIndex4]+r1235[randomMsgIndex5], TextView.BufferType.EDITABLE);
+        Technique.BOUNCE.getComposer().duration(500).delay(0).playOn(text);
 
 
     }
 
-
-    public void clickCrno(View view) {
+    public void obrisiTekst(View view) {
 
         EditText text = (EditText)findViewById(R.id.editTextSlika) ;
-        FloatingActionButton floatingActionButtonDelete = (FloatingActionButton)findViewById(R.id.floatingActionButtonDelete);
-        FloatingActionButton floatingActionButtonRandom = (FloatingActionButton)findViewById(R.id.floatingActionButtonRandom);
-        FloatingActionButton floatingActionButtonCrno = (FloatingActionButton)findViewById(R.id.floatingActionButtonCrno);
-        FloatingActionButton floatingActionButtonBelo = (FloatingActionButton)findViewById(R.id.floatingActionButtonBelo);
-        FloatingActionButton floatingActionButtonPlavo = (FloatingActionButton)findViewById(R.id.floatingActionButtonPlavo);
-        FloatingActionButton floatingActionButtonDefault = (FloatingActionButton)findViewById(R.id.floatingActionButtonDefault);
+        text.setVisibility(View.INVISIBLE);
+        text.getText().clear();
 
-        floatingActionButtonCrno.setVisibility(View.INVISIBLE);
-        floatingActionButtonBelo.setVisibility(View.VISIBLE);
-        Technique.ROTATE.getComposer().duration(500).delay(0).playOn(floatingActionButtonBelo);
+    }
+
+    public void roze(View view) {
+
+        EditText text = (EditText)findViewById(R.id.editTextSlika) ;
+        com.github.clans.fab.FloatingActionButton rozedugme = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.bojaRoze);
+        com.github.clans.fab.FloatingActionButton crnodugme = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.bojaCrna);
+        com.github.clans.fab.FloatingActionButton belodugme = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.bojaBela);
+        com.github.clans.fab.FloatingActionButton zelenodugme = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.bojaZelena);
+
+        rozedugme.setVisibility(View.GONE);
+        crnodugme.setVisibility(View.VISIBLE);
         text.setTextColor(Color.parseColor("#000000"));
         text.setHintTextColor(Color.parseColor("#000000"));
 
 
 
-
     }
 
-    public void clickBelo(View view) {
+    public void crna(View view) {
 
         EditText text = (EditText)findViewById(R.id.editTextSlika) ;
-        FloatingActionButton floatingActionButtonDelete = (FloatingActionButton)findViewById(R.id.floatingActionButtonDelete);
-        FloatingActionButton floatingActionButtonRandom = (FloatingActionButton)findViewById(R.id.floatingActionButtonRandom);
-        FloatingActionButton floatingActionButtonCrno = (FloatingActionButton)findViewById(R.id.floatingActionButtonCrno);
-        FloatingActionButton floatingActionButtonBelo = (FloatingActionButton)findViewById(R.id.floatingActionButtonBelo);
-        FloatingActionButton floatingActionButtonPlavo = (FloatingActionButton)findViewById(R.id.floatingActionButtonPlavo);
-        FloatingActionButton floatingActionButtonDefault = (FloatingActionButton)findViewById(R.id.floatingActionButtonDefault);
+        com.github.clans.fab.FloatingActionButton rozedugme = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.bojaRoze);
+        com.github.clans.fab.FloatingActionButton crnodugme = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.bojaCrna);
+        com.github.clans.fab.FloatingActionButton belodugme = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.bojaBela);
+        com.github.clans.fab.FloatingActionButton zelenodugme = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.bojaZelena);
 
-
-        floatingActionButtonBelo.setVisibility(View.INVISIBLE);
-        floatingActionButtonPlavo.setVisibility(View.VISIBLE);
-
-        Technique.ROTATE.getComposer().duration(500).delay(0).playOn(floatingActionButtonPlavo);
+        belodugme.setVisibility(View.VISIBLE);
+        crnodugme.setVisibility(View.GONE);
         text.setTextColor(Color.parseColor("#FFFFFFFF"));
         text.setHintTextColor(Color.parseColor("#FFFFFFFF"));
 
 
 
-
     }
 
-    public void clickPlavo(View view) {
+    public void bela(View view) {
 
         EditText text = (EditText)findViewById(R.id.editTextSlika) ;
-        FloatingActionButton floatingActionButtonDelete = (FloatingActionButton)findViewById(R.id.floatingActionButtonDelete);
-        FloatingActionButton floatingActionButtonRandom = (FloatingActionButton)findViewById(R.id.floatingActionButtonRandom);
-        FloatingActionButton floatingActionButtonCrno = (FloatingActionButton)findViewById(R.id.floatingActionButtonCrno);
-        FloatingActionButton floatingActionButtonBelo = (FloatingActionButton)findViewById(R.id.floatingActionButtonBelo);
-        FloatingActionButton floatingActionButtonPlavo = (FloatingActionButton)findViewById(R.id.floatingActionButtonPlavo);
-        FloatingActionButton floatingActionButtonDefault = (FloatingActionButton)findViewById(R.id.floatingActionButtonDefault);
+        com.github.clans.fab.FloatingActionButton rozedugme = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.bojaRoze);
+        com.github.clans.fab.FloatingActionButton crnodugme = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.bojaCrna);
+        com.github.clans.fab.FloatingActionButton belodugme = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.bojaBela);
+        com.github.clans.fab.FloatingActionButton zelenodugme = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.bojaZelena);
 
-
-
-        floatingActionButtonPlavo.setVisibility(View.INVISIBLE);
-        floatingActionButtonDefault.setVisibility(View.VISIBLE);
-
-
-        Technique.ROTATE.getComposer().duration(500).delay(0).playOn(floatingActionButtonDefault);
+        belodugme.setVisibility(View.GONE);
+        zelenodugme.setVisibility(View.VISIBLE);
         text.setTextColor(Color.parseColor("#00ff04"));
         text.setHintTextColor(Color.parseColor("#00ff04"));
 
-
-
-
     }
 
-    public void clickDefault(View view) {
+    public void zelena(View view) {
 
         EditText text = (EditText)findViewById(R.id.editTextSlika) ;
-        FloatingActionButton floatingActionButtonDelete = (FloatingActionButton)findViewById(R.id.floatingActionButtonDelete);
-        FloatingActionButton floatingActionButtonRandom = (FloatingActionButton)findViewById(R.id.floatingActionButtonRandom);
-        FloatingActionButton floatingActionButtonCrno = (FloatingActionButton)findViewById(R.id.floatingActionButtonCrno);
-        FloatingActionButton floatingActionButtonBelo = (FloatingActionButton)findViewById(R.id.floatingActionButtonBelo);
-        FloatingActionButton floatingActionButtonPlavo = (FloatingActionButton)findViewById(R.id.floatingActionButtonPlavo);
-        FloatingActionButton floatingActionButtonDefault = (FloatingActionButton)findViewById(R.id.floatingActionButtonDefault);
+        com.github.clans.fab.FloatingActionButton rozedugme = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.bojaRoze);
+        com.github.clans.fab.FloatingActionButton crnodugme = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.bojaCrna);
+        com.github.clans.fab.FloatingActionButton belodugme = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.bojaBela);
+        com.github.clans.fab.FloatingActionButton zelenodugme = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.bojaZelena);
 
-
-
-
-        floatingActionButtonDefault.setVisibility(View.INVISIBLE);
-        floatingActionButtonCrno.setVisibility(View.VISIBLE);
-
-
-        Technique.ROTATE.getComposer().duration(500).delay(0).playOn(floatingActionButtonCrno);
+        rozedugme.setVisibility(View.VISIBLE);
+        zelenodugme.setVisibility(View.GONE);
         text.setTextColor(Color.parseColor("#e91e63"));
         text.setHintTextColor(Color.parseColor("#e91e63"));
 
+    }
+
+    public void klik(View view) {
+
+        FloatingActionMenu fam = (FloatingActionMenu)findViewById(R.id.menu_green);
+        fam.close(true);
 
 
 
     }
+
+
+
+
+
 }
